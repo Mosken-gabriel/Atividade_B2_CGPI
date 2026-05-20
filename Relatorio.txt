@@ -1,0 +1,41 @@
+A) Como a imagem original mudou após a aplicação de cada filtro?
+Filtro de Média: A imagem ficou com um aspecto borrado e desfocado. Conforme o tamanho do kernel aumentou (de 7x7 para 25x25), a imagem perdeu cada vez mais a sua nitidez e os detalhes da rosa e das folhas desapareceram quase por completo, misturando as transições de luz e sombra.
+
+Filtro de Sobel: A imagem sofreu uma mudança drástica. O preenchimento da flor e do fundo escureceu, enquanto os contornos (mudanças bruscas de intensidade de cor/luz) ficaram destacados em branco. O "Sobel X" destacou as linhas verticais, o "Sobel Y" destacou as linhas horizontais, e o "Sobel Combinado" uniu ambos, revelando a silhueta completa e os vincos das pétalas da rosa.
+
+Filtro de Mediana: A imagem também foi suavizada, mas com um efeito visual diferente do filtro de média. Em tamanhos menores (3x3 e 7x7), ela reduziu texturas finas mantendo as bordas da rosa relativamente nítidas. No tamanho maior (15x15), a imagem ganhou um aspecto de "pintura a óleo" ou aquarela, agrupando áreas de tons semelhantes em blocos, sem criar aquele borrado esfumaçado intenso do filtro de média.
+
+
+
+B) Qual filtro foi mais eficaz para suavizar a imagem?
+Para um efeito de suavização global (desfoque contínuo), o Filtro de Média foi o mais eficaz, pois espalhou uniformemente as intensidades dos pixels, criando um borrão clássico. No entanto, se o objetivo da suavização for remover imperfeições finas preservando os contornos dos objetos, o Filtro de Mediana (em kernels menores) mostrou-se superior.
+
+
+
+C) E qual foi mais eficaz para destacar as bordas?
+O Filtro de Sobel. Este filtro é um operador matemático de derivada espacial, projetado especificamente para calcular o gradiente da imagem e encontrar bordas, realçando as áreas de alto contraste e ignorando as áreas de cores sólidas e uniformes.
+
+
+
+D) Quais situações podem exigir o uso de cada tipo de filtro em um projeto real?
+Filtro de Média:
+
+Censura de informações sensíveis (borrar rostos, placas de carros ou documentos).
+
+Pré-processamento de imagens para reduzir detalhes excessivos antes de aplicar outros algoritmos, diminuindo o processamento computacional.
+
+Efeitos estéticos em aplicativos de fotografia (como desfocar o fundo de uma foto para destacar o plano principal).
+
+Filtro de Mediana:
+
+Remoção de ruídos em imagens médicas (Ressonância Magnética, Raio-X) ou imagens de satélite, onde é crucial limpar interferências sem perder as bordas exatas dos órgãos ou terrenos.
+
+Correção de imagens antigas digitalizadas ou fotos tiradas com sensores defeituosos que apresentam o ruído "sal e pimenta" (pontinhos brancos e pretos espalhados pela imagem).
+
+Filtro de Sobel:
+
+Sistemas de visão computacional em carros autônomos para identificar faixas nas vias e a silhueta de pedestres/veículos.
+
+Sistemas de leitura ótica de caracteres (OCR) para encontrar as bordas das letras antes do reconhecimento de texto.
+
+Inspeção de qualidade em fábricas para verificar se peças industriais possuem os contornos no formato e tamanho corretos.
